@@ -2,7 +2,9 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/LocationBasedAndroidApplication.iml" filepath="$PROJECT_DIR$/LocationBasedAndroidApplication.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/LocationBasedAndroidApplication.iml" filepath="$PROJECT_DIR$/.idea/LocationBasedAndroidApplication.iml" />
+      <module fileurl="file://C:\Users\Nathan\Programming\Android\LocationBasedAndroidApplication\LocationBasedAndroidApplication.iml" filepath="C:\Users\Nathan\Programming\Android\LocationBasedAndroidApplication\LocationBasedAndroidApplication.iml" />
+      <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
     </modules>
   </component>
 </project>
