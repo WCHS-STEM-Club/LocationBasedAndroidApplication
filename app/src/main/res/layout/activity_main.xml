@@ -23,11 +23,13 @@
 
     <include layout="@layout/content_main"/>
 
+    <!-- i took out the margins because it wouldn't build
+         so like if you're that intent on that then make
+         sure to add a 'dimens.xml' in the res/values folder -->
     <android.support.design.widget.FloatingActionButton
       android:id="@+id/fab"
       android:layout_width="wrap_content"
       android:layout_height="wrap_content"
-      android:layout_margin="@dimen/fab_margin"
       android:layout_gravity="bottom|end"
       app:srcCompat="@android:drawable/ic_menu_mylocation"/>
 

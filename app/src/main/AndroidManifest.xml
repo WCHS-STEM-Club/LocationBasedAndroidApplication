@@ -2,7 +2,18 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
   package="com.example.kofu.locationbasedandroidapplication">
 
-  <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+  <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />   <!-- to look for location                            -->
+  <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />   <!-- check if device can even find location          -->
+  <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />      <!-- same as above                                   -->
+  <uses-permission android:name="android.permission.BODY_SENSORS" />           <!-- for gyro if we need device directin             -->
+  <uses-permission android:name="android.permission.CAMERA" />                 <!-- for my selfies                                  -->
+  <uses-permission android:name="android.permission.FLASHLIGHT" />             <!-- for a celebration when you win                  -->
+  <uses-permission android:name="android.permission.INTERNET" />               <!-- pretty sure user doesnt have to approve of this -->
+  <uses-permission android:name="android.permission.LOCATION_HARDWARE" />      <!-- idk what this is but we'll let our hardware
+                                                                                    people figure it out                            -->
+  <uses-permission android:name="android.permission.VIBRATE" />                <!-- same as flashlight                              -->
+  <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" /> <!-- likely to be used, this lets you read
+                                                                                    write to internal and external storage          -->
 
   <application
     android:allowBackup="true"

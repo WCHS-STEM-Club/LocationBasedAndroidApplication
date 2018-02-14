@@ -9,12 +9,8 @@
     tools:showIn="@layout/activity_main"
     tools:context="com.example.kofu.locationbasedandroidapplication.MainActivity">
 
-  <TextView
-    android:id="@+id/textView"
-    android:layout_width="334dp"
-    android:layout_height="63dp"
-    android:gravity="center_vertical|center"
-    android:text="Welcome to LocationBasedAndroidApplication!"
-    tools:layout_editor_absoluteX="26dp"
-    tools:layout_editor_absoluteY="16dp"/>
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="16dp"
+        android:textAlignment="center" />
 </android.support.constraint.ConstraintLayout>
