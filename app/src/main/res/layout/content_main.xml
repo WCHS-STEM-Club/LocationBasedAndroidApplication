@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.constraint.ConstraintLayout
+<RelativeLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     xmlns:app="http://schemas.android.com/apk/res-auto"
@@ -10,7 +10,12 @@
     tools:context="com.example.kofu.locationbasedandroidapplication.MainActivity">
 
     <TextView
+        android:id="@+id/text"
         android:layout_width="match_parent"
-        android:layout_height="16dp"
-        android:textAlignment="center" />
-</android.support.constraint.ConstraintLayout>
+        android:layout_height="wrap_content"
+        android:layout_centerVertical="true"
+        android:fontFamily="cursive"
+        android:text="so like if you want text to like come here then you should prob move ur fat ass"
+        android:textAlignment="center"
+        android:textSize="56dp" />  <!-- f a n c y -->
+</RelativeLayout>

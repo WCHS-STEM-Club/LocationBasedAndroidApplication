@@ -15,9 +15,12 @@ import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.util.Log;
 import android.view.View;
+import android.widget.TextView;
 import android.widget.Toast;
 
 public class MainActivity extends AppCompatActivity {
+
+    public static LocationManager locationManager;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -26,17 +29,14 @@ public class MainActivity extends AppCompatActivity {
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
+        locationManager = (LocationManager) getSystemService(Context.LOCATION_SERVICE);
+
         FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
         fab.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                LocationManager locationManager = (LocationManager) getSystemService(
-                        Context.LOCATION_SERVICE);
 
-                LocationListener locationListener = new MyLocationListener();
                 assert locationManager != null;
-
-                //TODO: [PROD] handle permissions
 
                 if (ActivityCompat.checkSelfPermission(getBaseContext(), permission.ACCESS_FINE_LOCATION) != PackageManager.PERMISSION_GRANTED &&
                         ActivityCompat.checkSelfPermission(getBaseContext(), permission.ACCESS_COARSE_LOCATION) != PackageManager.PERMISSION_GRANTED) {
@@ -44,12 +44,22 @@ public class MainActivity extends AppCompatActivity {
                     return;
                 }
 
-                locationManager.requestLocationUpdates(LocationManager.GPS_PROVIDER, 5000, 10, locationListener);
 
-//                Snackbar.make(view, "You are located: right here", Snackbar.LENGTH_LONG)
-//                        .setAction("Action", null).show();
+                Snackbar.make(view, "You are located: right here", Snackbar.LENGTH_LONG).setAction("Action", null).show();
             }
         });
+
+        LocationListener locationListener = new LocationListener() {
+
+            @Override public void onLocationChanged(Location l) {
+                Log.d("LOCATION ALERT", "LOCATION CHANGED: " + l.getLatitude() + ", " + l.getLongitude());
+                ((TextView) findViewById(R.id.text)).setText("uR L0c4t1on: \nLatitude: " + l.getLatitude() + "\nLongitude: " + l.getLongitude());
+            }
+            @Override public void onStatusChanged(String s, int i, Bundle bundle) {}
+            @Override public void onProviderEnabled(String s) {}
+            @Override public void onProviderDisabled(String s) {}
+        };
+        locationManager.requestLocationUpdates(LocationManager.GPS_PROVIDER, 5000, 10, locationListener);
     }
 
   // nate keep in mind the location listener won't be called until you move >5 meters
